@@ -42,12 +42,14 @@ body {
   font-size: 1.5rem;
 }
 
+
 .web-name {
   font-size: 2rem;
 }
 
 .web-name-main {
   font-size: 4rem;
+  font-weight: bold;
 }
 
 main {
@@ -67,4 +69,110 @@ main {
   align-items: center;
   width: 100vw;
   height: 30vh;
+}
+
+
+#main-intro-mission{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.main-intro-mission-text{
+
+  width:60vw;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.blue-button{
+
+  background-color: rgba(240, 248, 255, 0);
+  border-color: white;
+  color: aliceblue;
+  padding:1vh;
+  margin-top: 5vh;
+  border-radius:   100px;
+}
+
+.main-intro-text{
+  width: 100vw;
+  text-align: center;
+}
+
+#main-features{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 20vh;
+
+}
+
+#home-features-container{
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width:100vw;
+  height: 80vh;
+}
+
+.home-features{
+
+  width: 35vw;
+  height:30vh;
+  margin-right: 1vw;
+  border-color: white;
+  border-radius: 2%;
+  border-style: solid;
+  background-color: rgba(255, 255, 255, 0.078);
+}
+
+#home-feedback{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 20vh;
+  
+
+}
+
+#feedback-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding-top: 10vh;
+}
+
+.feedback{
+
+  width: 30vw;
+  height:40vh;
+  border: solid white;
+  border-radius: 10%;
+}
+
+footer{
+
+  background-color: white;
+  color: darkblue;
+  width:100vw;
+  height:40vh;
+  margin-top: 10vh;
+}
+
+.white-button{
+
+  padding: 1vh;
+  border-radius:   100px;
+  margin-top: 2vh;
 }
