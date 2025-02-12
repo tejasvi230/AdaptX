@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Theme Customizer</title>
+    <link rel="stylesheet" href="customization.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Accessibility Theme Customizer</h1>
+        <p>Customize the theme to make it more accessible for neurodiverse individuals.</p>
+
+        <!-- Color Theme Options -->
+        <section>
+            <h2>Color Theme</h2>
+            <div class="color-options">
+                <button data-theme="default">Default</button>
+                <button data-theme="high-contrast">High Contrast</button>
+                <button data-theme="deuteranopia">Deuteranopia Friendly</button>
+                <button data-theme="protanopia">Protanopia Friendly</button>
+                <button data-theme="tritanopia">Tritanopia Friendly</button>
+                <button data-theme="autism-friendly">Autism Friendly</button>
+            </div>
+        </section>
+
+        <!-- Font Options -->
+        <section>
+            <h2>Font Customization</h2>
+            <div class="font-options">
+                <select id="font-select">
+                    <option value="Arial">Arial</option>
+                    <option value="OpenDyslexic">OpenDyslexic</option>
+                    <option value="Comic Sans MS">Comic Sans</option>
+                    <option value="Verdana">Verdana</option>
+                </select>
+                <label for="font-size">Font Size:</label>
+                <input type="range" id="font-size" min="12" max="24" value="16">
+            </div>
+        </section>
+
+        <!-- Accessibility Options -->
+        <section>
+            <h2>Accessibility Options</h2>
+            <div class="accessibility-options">
+                <label>
+                    <input type="checkbox" id="high-contrast-mode"> High Contrast Mode
+                </label>
+                <label>
+                    <input type="checkbox" id="grayscale-mode"> Grayscale Mode
+                </label>
+                <label>
+                    <input type="checkbox" id="underline-links"> Underline Links
+                </label>
+            </div>
+        </section>
+
+        <!-- Download Theme -->
+        <section>
+            <h2>Download Your Theme</h2>
+            <button id="download-theme">Download CSS File</button>
+        </section>
+    </div>
+
+    <script src="customization.js"></script>
+</body>
+</html>
