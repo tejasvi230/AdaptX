@@ -1,0 +1,157 @@
+/* Default Theme: Dark Blue */
+/* body { */
+    /* font-family: Arial, sans-serif; */
+    /* line-height: 1.6; */
+    /* padding: 20px; */
+    /* background-color: #1E1E2F; /* Dark blue */ 
+    /* color: #FFFFFF; /* White text */ 
+    /* transition: all 0.3s ease; */
+/* } */
+
+/* .container { */
+    /* max-width: 800px; */
+    /* margin: 0 auto; */
+/* } */
+
+/* h1, h2 { */
+    /* color: #4FC3F7; /* Light blue for headings */ 
+/* } */
+
+/* .color-options button { */
+    /* margin: 5px; */
+    /* padding: 10px 20px; */
+    /* cursor: pointer; */
+    /* border: none; */
+    /* border-radius: 8px; */
+    /* background-color: #4FC3F7; /* Light blue */ 
+    /* color: #1E1E2F; /* Dark blue text */ 
+    /* transition: background-color 0.3s ease; */
+/* } */
+
+/* .color-options button:hover { */
+    /* background-color: #3BAFDB; /* Slightly darker blue on hover */ 
+/* } */
+
+/* .font-options, .accessibility-options { */
+    /* margin: 20px 0; */
+/* } */
+
+/* select, input[type="range"] { */
+    /* margin: 10px 0; */
+    /* padding: 5px; */
+    /* border-radius: 5px; */
+    /* border: 1px solid #4FC3F7; */
+    /* background-color: #2E2E3F; */
+    /* color: #FFFFFF; */
+/* } */
+
+/* label { */
+    /* display: block; */
+    /* margin: 10px 0; */
+/* } */
+
+/* #download-theme { */
+    /* padding: 10px 20px; */
+    /* background-color: #4FC3F7; */
+    /* color: #1E1E2F; */
+    /* border: none; */
+    /* border-radius: 8px; */
+    /* cursor: pointer; */
+    /* transition: background-color 0.3s ease; */
+/* } */
+
+/* #download-theme:hover { */
+    /* background-color: #3BAFDB; */
+/* } */
+
+/* Theme Styles */
+/* .high-contrast { */
+    /* background-color: #000000 !important; */
+    /* color: #FFFFFF !important; */
+/* } */
+
+/* .deuteranopia { */
+    /* background-color: #F0F0F0 !important; */
+    /* color: #333333 !important; */
+/* } */
+
+/* .protanopia { */
+    /* background-color: #E6E6E6 !important; */
+    /* color: #555555 !important; */
+/* } */
+
+/* .tritanopia { */
+    /* background-color: #F5F5F5 !important; */
+    /* color: #222222 !important; */
+/* } */
+
+/* .autism-friendly { */
+    /* background-color: #E8F5E9 !important; */
+    /* color: #2E7D32 !important; */
+/* } */
+
+/* .grayscale { */
+    /* filter: grayscale(100%) !important; */
+/* } */
+
+/* .underline-links a { */
+    /* text-decoration: underline !important; */
+/* } */
+body {
+    background-color: #121826;
+    color: #53b4ff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #2A3248;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+button {
+    background: #53b4ff;
+    color: #121826;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3a9bdc;
+}
+
+input[type='range'] {
+    width: 100%;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+    background: #121826;
+    color: white;
+    border: 1px solid #53b4ff;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+    background-color: black;
+    color: yellow;
+}
+
+/* Grayscale Mode */
+.grayscale {
+    filter: grayscale(100%);
+}
+
+/* Underline Links */
+.underline-links a {
+    text-decoration: underline;
+}
