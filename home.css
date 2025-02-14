@@ -198,49 +198,51 @@ footer{
 }
 
 /*footer*/
+.footer {
+    background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+    color: darkblue;
+    padding: 20px 0; /* Further reduced padding */
+    text-align: center;
+    font-size: 16px; /* Slightly smaller font */
+    height: auto; /* Ensure the footer height adjusts dynamically */
+}
 
- .footer {
-        background: linear-gradient(to bottom, #ffffff, #e0e0e0);
-        color: darkblue;
-        padding: 60px 0;
-        text-align: center;
-        font-size: 16px;
-         
-        
-    }
-    .container {
-        max-width: 1200px;
-        margin: auto;
-        
-        
-    }
-    .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 20px;
-    }
-    .footer-section {
-        flex: 1;
-        padding: 20px;
-        min-width: 250px;
-    }
-    .footer-section h2 {
-        margin-bottom: 15px;
-        font-size: 20px;
-    }
-    .footer-section ul {
-        list-style: none;
-        padding: 0;
-    }
-    .footer-section ul li {
-        margin: 8px 0;
-    }
-    .footer-section ul li a {
-        text-decoration: none;
-        color: darkblue;
-        transition: 0.3s;
-    }
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items if needed */
+    padding: 5px; /* Reduce padding further */
+    margin: 0;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px; /* Reduce footer section padding */
+    min-width: 200px; /* Adjust minimum width */
+    text-align: center;
+}
+
+.footer-section h2 {
+    margin-bottom: 5px; /* Reduce heading margin */
+    font-size: 18px;
+    
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin: 4px 0; /* Reduce spacing between list items */
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    font-size: 16px; /* Reduce font size */
+
+}
     .footer-section ul li a:hover {
         color: navy;
     }
