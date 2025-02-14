@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdaptX</title>
+    <link rel="stylesheet" href="featurepage.css" />
+  </head>
+  <body>
+    <header>
+      <div id="navbar">
+        <div class="web-name">AdaptX</div>
+        <div id="navbar-menu">
+          <div>HOME</div>
+          <div>ABOUT US</div>
+          <div>ACCESSIBILITY FEATURES</div>
+          <div>GUIDELINES</div>
+          <div>CONTACT US</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="features">
+        <h1>FEATURES</h1>
+        <div class="search-container">
+          <input type="text" placeholder="Hinted search text" class="search-input" />
+          <button type="submit" class="search-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+
+
+
+
+
+
+        <div class="feature-grid">
+  <div class="feature-card">
+    <a href="feature3.html">
+      <img src="textHigh.jpg" alt="Highlight Text Feature" class="feature-image"/>
+    </a>
+  </div>
+
+  
+         <div class="feature-card">
+    <a href="feature5.html">
+      <img src="Neurodiverse Font Customizer.webp" alt="Neurodiverse Font Customizer" />
+    </a>
+</div>
+
+
+
+  <div class="feature-card">
+    <a href="feature1.html">
+      <img src="dylexia.webp" alt="Dyslexia Font Customiser" />
+    </a>
+
+  </div>
+  <div class="feature-card">
+    <a href="feature2.html">
+      <img src="time3.webp" alt="Time Mangement Tool" />
+    </a>
+  </div>
+
+  <div class="feature-card">
+    <a href="feature4.html">
+      <img src="darkmode.jpg" alt="Dark Mode Toggle Feature" />
+    </a>
+  </div>
+
+
+
+
+         <div class="feature-card">
+    <a href="feature6.html">
+      <img src="texttospeech.jpg" alt="Text To Speech" />
+    </a>
+</div>
+
+    
+    </main>
+    
+    <div id="footer"></div>
+    <script>
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+    <script src="featurepage.js"></script>
+  </body>
+</html>
