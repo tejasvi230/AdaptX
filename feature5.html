@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurodiverse Font Customizer</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            background-color: #1c2333;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Box for Customization */
+        .customization-box {
+            width: 80%;
+            max-width: 700px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+            margin: auto;
+            margin-top:40px;
+            
+        }
+
+        /* Sample Website Section */
+        .sample-website {
+            background-color: #ffffff;
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 150px;
+            text-align: left;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        /* Controls Section */
+        .controls {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        select, input {
+            margin-top: 5px;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        /* Dyslexia-friendly font */
+        @font-face {
+            font-family: "OpenDyslexic";
+            src: url("https://fonts.cdnfonts.com/s/14498/OpenDyslexic3-Regular.woff") format("woff");
+        }
+
+        /* Neurodiverse themes */
+        .dyslexia-theme {
+            font-family: "OpenDyslexic", Arial, sans-serif;
+            background-color: #f3e5ab;
+            color: #2e2e2e;
+        }
+
+        .adhd-theme {
+            font-family: "Verdana", sans-serif;
+            background-color: #fffbcc;
+            color: #333;
+        }
+
+        .autism-theme {
+            font-family: "Georgia", sans-serif;
+            background-color: #003366;
+            color: #f4f4f4;
+        }
+
+        .colorblind-theme {
+            font-family: "Arial", sans-serif;
+            background-color: #cccccc;
+            color: #111;
+        }
+
+        /* Download Button */
+        .download-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .download-btn:hover {
+            background-color: #0088cc;
+        }
+    </style>
+</head>
+<body>
+<header>
+  <div id="navbar">
+    <div class="web-name">AdaptX</div>
+    <div id="navbar-menu">
+    <div>HOME</div>
+    <div>ABOUT US</div>
+<div>ACCESIBLITY FEATURES</div>
+
+<div>GUIDLINES</div>
+<div>CONTACT US</div>
+</div>
+</div>
+</header>
+    <div class="customization-box">
+        <h2>🧠 Neurodiverse Font & Color Customizer</h2>
+        <p>Adjust the font and color scheme to suit your needs. These settings apply to the sample website below.</p>
+
+        <div class="controls">
+            <label for="fontSize">Font Size:</label>
+            <input type="range" id="fontSize" min="10" max="50" value="18">
+            <span id="sizeValue">18px</span>
+
+            <label for="fontStyle">Font Style:</label>
+            <select id="fontStyle">
+                <option value="Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="OpenDyslexic">Dyslexia-Friendly</option>
+            </select>
+
+            <label for="fontColor">Font Color:</label>
+            <input type="color" id="fontColor" value="#000000">
+
+            <label for="bgColor">Background Color:</label>
+            <input type="color" id="bgColor" value="#ffffff">
+
+            <label for="theme">Neurodiverse Themes:</label>
+            <select id="theme">
+                <option value="default">Default</option>
+                <option value="dyslexia-theme">Dyslexia-Friendly</option>
+                <option value="adhd-theme">ADHD-Friendly</option>
+                <option value="autism-theme">Autism-Friendly</option>
+                <option value="colorblind-theme">Colorblind-Friendly</option>  
+            </select>
+        </div>
+
+        <h3>📄 Sample Website</h3>
+        <div id="content" class="sample-website">
+            <h3>🌟 Welcome to My Website</h3>
+            <p>This is a sample website section where custom fonts and colors will be applied.</p>
+            <p>Change settings above to see the effect!</p>
+        </div>
+
+        <button class="download-btn" id="downloadBtn">📥 Download CSS Code</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fontSizeInput = document.getElementById("fontSize");
+            const fontStyleInput = document.getElementById("fontStyle");
+            const fontColorInput = document.getElementById("fontColor");
+            const bgColorInput = document.getElementById("bgColor");
+            const themeSelect = document.getElementById("theme");
+            const contentDiv = document.getElementById("content");
+            const sizeValue = document.getElementById("sizeValue");
+            const body = document.body;
+
+            fontSizeInput.addEventListener("input", function () {
+                const newSize = fontSizeInput.value + "px";
+                contentDiv.style.fontSize = newSize;
+                sizeValue.innerText = newSize;
+            });
+
+            fontStyleInput.addEventListener("change", function () {
+                contentDiv.style.fontFamily = fontStyleInput.value;
+            });
+
+            fontColorInput.addEventListener("input", function () {
+                contentDiv.style.color = fontColorInput.value;
+            });
+
+            bgColorInput.addEventListener("input", function () {
+                contentDiv.style.backgroundColor = bgColorInput.value;
+            });
+
+            themeSelect.addEventListener("change", function () {
+                contentDiv.className = "sample-website";
+                if (themeSelect.value !== "default") {
+                    contentDiv.classList.add(themeSelect.value);
+                }
+            });
+
+            document.getElementById("downloadBtn").addEventListener("click", function () {
+                const cssCode = `
+                    body { background-color: ${bgColorInput.value}; }
+                    .sample-website { color: ${fontColorInput.value}; font-size: ${fontSizeInput.value}px; font-family: ${fontStyleInput.value}; }
+                `;
+                const blob = new Blob([cssCode], { type: "text/css" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "custom-styles.css";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            });
+        });
+    </script>
+<div id="footer"></div>
+<script>
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+
+  
+
+
+</body>
+</html>

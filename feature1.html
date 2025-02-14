@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyslexia-Friendly Mode</title>
+    <link rel="stylesheet" href="features1.css">
+    <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button id="dyslexia-toggle">Enable Dyslexia Mode</button>
+
+    <main>
+        <h2>Welcome to Our Dyslexia-Friendly Website</h2>
+        <p>This is an example text to demonstrate the dyslexia-friendly mode. Enabling this mode will improve readability for individuals with dyslexia.</p>
+    </main>
+
+    <script>
+        // Check if dyslexia mode is stored in local storage
+        const isDyslexiaMode = localStorage.getItem('dyslexia-mode') === 'true';
+
+        // Apply dyslexia mode if previously enabled
+        if (isDyslexiaMode) {
+            document.body.classList.add('dyslexia-mode');
+        }
+
+        // Toggle dyslexia mode
+        document.getElementById('dyslexia-toggle').addEventListener('click', function () {
+            document.body.classList.toggle('dyslexia-mode');
+            const modeEnabled = document.body.classList.contains('dyslexia-mode');
+            localStorage.setItem('dyslexia-mode', modeEnabled);
+            this.textContent = modeEnabled ? "Disable Dyslexia Mode" : "Enable Dyslexia Mode";
+        });
+    </script>
+
+
+
+
+ <button id="download-files">Download All Code Files</button>
+
+
+
+
+
+</body>
+</html>

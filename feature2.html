@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Management Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+    }
+    .task-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .task-form input, .task-form button {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .task-form button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .task-form button:hover {
+      background-color: #45a049;
+    }
+    .task-list {
+      list-style: none;
+      padding: 0;
+    }
+    .task-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      background: #f9f9f9;
+    }
+    .task-item.completed {
+      text-decoration: line-through;
+      color: gray;
+      background: #e0e0e0;
+    }
+    .task-item button {
+      padding: 5px 10px;
+      font-size: 14px;
+      color: white;
+      background-color: #f44336;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .task-item button:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Time Management Tool</h1>
+    <form class="task-form" id="taskForm">
+      <input type="text" id="taskInput" placeholder="Enter a task..." required>
+      <input type="datetime-local" id="deadlineInput" required>
+      <button type="submit">Add Task</button>
+    </form>
+    <ul class="task-list" id="taskList"></ul>
+  </div>
+
+  <script>
+    document.getElementById('taskForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const taskInput = document.getElementById('taskInput');
+      const deadlineInput = document.getElementById('deadlineInput');
+      const taskList = document.getElementById('taskList');
+
+      const taskText = taskInput.value;
+      const taskDeadline = new Date(deadlineInput.value).toLocaleString();
+
+      // Create task item
+      const taskItem = document.createElement('li');
+      taskItem.classList.add('task-item');
+      taskItem.innerHTML = `
+        <span>${taskText} (Due: ${taskDeadline})</span>
+        <button onclick="deleteTask(this)">Delete</button>
+      `;
+
+      taskItem.addEventListener('click', function() {
+        taskItem.classList.toggle('completed');
+      });
+
+      // Append to the task list
+      taskList.appendChild(taskItem);
+
+      // Clear input fields
+      taskInput.value = '';
+      deadlineInput.value = '';
+    });
+
+    function deleteTask(button) {
+      const taskItem = button.parentElement;
+      taskItem.remove();
+    }
+  </script>
+
+
+
+<button id="download-files">Download All Code Files</button>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+/* Default Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Dyslexia Mode */
+.dyslexia-mode {
+    font-family: 'OpenDyslexic', Arial, sans-serif !important;
+    letter-spacing: 0.12em;
+    word-spacing: 0.3em;
+    line-height: 1.8;
+    background: #fff7e6; /* Light yellow background for better contrast */
+    color: #000;
+}
+
+/* Improve heading readability */
+.dyslexia-mode h2 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+}
+
+
+
+
+/* Make button more readable */
+#dyslexia-toggle {
+    padding: 10px 15px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#dyslexia-toggle:hover {
+    background: #0056b3;
+}
