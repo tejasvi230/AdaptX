@@ -3,65 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessibility Theme Customizer</title>
-    <link rel="stylesheet" href="customization.css">
+    <title>Neurodiverse Font Customizer</title>
+    <style>
+        /* Default dark blue theme */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #1c2333;
+            color: white;
+        }
+
+        #content {
+            padding: 20px;
+            border: 2px solid #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            font-size: 16px;
+            color: white;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        select, input {
+            margin-top: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        /* Dyslexia-friendly font */
+        @font-face {
+            font-family: "OpenDyslexic";
+            src: url("https://fonts.cdnfonts.com/s/14498/OpenDyslexic3-Regular.woff") format("woff");
+        }
+
+        /* Neurodiverse themes */
+        .dyslexia-theme {
+            font-family: "OpenDyslexic", Arial, sans-serif;
+            background-color: #f3e5ab;
+            color: #2e2e2e;
+        }
+
+        .adhd-theme {
+            font-family: "Verdana", sans-serif;
+            background-color: #fffbcc;
+            color: #333;
+        }
+
+        .autism-theme {
+            font-family: "Georgia", sans-serif;
+            background-color: #003366;
+            color: #f4f4f4;
+        }
+
+        .colorblind-theme {
+            font-family: "Arial", sans-serif;
+            background-color: #cccccc;
+            color: #111;
+        }
+
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Accessibility Theme Customizer</h1>
-        <p>Customize the theme to make it more accessible for neurodiverse individuals.</p>
 
-        <!-- Color Theme Options -->
-        <section>
-            <h2>Color Theme</h2>
-            <div class="color-options">
-                <button data-theme="default">Default</button>
-                <button data-theme="high-contrast">High Contrast</button>
-                <button data-theme="deuteranopia">Deuteranopia Friendly</button>
-                <button data-theme="protanopia">Protanopia Friendly</button>
-                <button data-theme="tritanopia">Tritanopia Friendly</button>
-                <button data-theme="autism-friendly">Autism Friendly</button>
-            </div>
-        </section>
+    <h2>Customize Your Text</h2>
 
-        <!-- Font Options -->
-        <section>
-            <h2>Font Customization</h2>
-            <div class="font-options">
-                <select id="font-select">
-                    <option value="Arial">Arial</option>
-                    <option value="OpenDyslexic">OpenDyslexic</option>
-                    <option value="Comic Sans MS">Comic Sans</option>
-                    <option value="Verdana">Verdana</option>
-                </select>
-                <label for="font-size">Font Size:</label>
-                <input type="range" id="font-size" min="12" max="24" value="16">
-            </div>
-        </section>
+    <div id="content">This is a sample text. Change my size, style, color, and background!</div>
 
-        <!-- Accessibility Options -->
-        <section>
-            <h2>Accessibility Options</h2>
-            <div class="accessibility-options">
-                <label>
-                    <input type="checkbox" id="high-contrast-mode"> High Contrast Mode
-                </label>
-                <label>
-                    <input type="checkbox" id="grayscale-mode"> Grayscale Mode
-                </label>
-                <label>
-                    <input type="checkbox" id="underline-links"> Underline Links
-                </label>
-            </div>
-        </section>
+    <div class="controls">
+        <label for="fontSize">Font Size:</label>
+        <input type="range" id="fontSize" min="10" max="50" value="16">
+        <span id="sizeValue">16px</span>
 
-        <!-- Download Theme -->
-        <section>
-            <h2>Download Your Theme</h2>
-            <button id="download-theme">Download CSS File</button>
-        </section>
+        <label for="fontStyle">Font Style:</label>
+        <select id="fontStyle">
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="OpenDyslexic">Dyslexia-Friendly</option>
+        </select>
+
+        <label for="fontColor">Font Color:</label>
+        <input type="color" id="fontColor" value="#ffffff">
+
+        <label for="bgColor">Background Color:</label>
+        <input type="color" id="bgColor" value="#1c2333">
+
+        <label for="theme">Neurodiverse Themes:</label>
+        <select id="theme">
+            <option value="default">Default</option>
+            <option value="dyslexia-theme">Dyslexia-Friendly</option>
+            <option value="adhd-theme">ADHD-Friendly</option>
+            <option value="autism-theme">Autism-Friendly</option>
+            <option value="colorblind-theme">Colorblind-Friendly</option>
+        </select>
     </div>
 
-    <script src="customization.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fontSizeInput = document.getElementById("fontSize");
+            const fontStyleInput = document.getElementById("fontStyle");
+            const fontColorInput = document.getElementById("fontColor");
+            const bgColorInput = document.getElementById("bgColor");
+            const themeSelect = document.getElementById("theme");
+            const contentDiv = document.getElementById("content");
+            const sizeValue = document.getElementById("sizeValue");
+            const body = document.body;
+
+            // Change font size
+            fontSizeInput.addEventListener("input", function () {
+                const newSize = fontSizeInput.value + "px";
+                contentDiv.style.fontSize = newSize;
+                sizeValue.innerText = newSize;
+            });
+
+            // Change font style
+            fontStyleInput.addEventListener("change", function () {
+                contentDiv.style.fontFamily = fontStyleInput.value;
+            });
+
+            // Change font color
+            fontColorInput.addEventListener("input", function () {
+                contentDiv.style.color = fontColorInput.value;
+            });
+
+            // Change background color
+            bgColorInput.addEventListener("input", function () {
+                body.style.backgroundColor = bgColorInput.value;
+            });
+
+            // Apply neurodiverse themes
+            themeSelect.addEventListener("change", function () {
+                body.className = ""; // Reset all classes
+                if (themeSelect.value !== "default") {
+                    body.classList.add(themeSelect.value);
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

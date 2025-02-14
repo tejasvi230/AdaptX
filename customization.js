@@ -1,83 +1,69 @@
-document.addEventListener(
-    "DOMContentLoaded", function() {
-      const body = document.body;
-      const colorButtons = document.querySelectorAll(".color-options button");
-      const fontSelect = document.getElementById("font-select");
-      const fontSizeInput = document.getElementById("font-size");
-      const highContrastCheckbox =
-          document.getElementById("high-contrast-mode");
-      const grayscaleCheckbox = document.getElementById("grayscale-mode");
-      const underlineLinksCheckbox = document.getElementById("underline-links");
-      const downloadButton = document.getElementById("download-theme");
+// // Get references to the input elements and the text element
+// const textElement = document.getElementById("text");
+// const fontSizeInput = document.getElementById("fontSize");
+// const fontColorInput = document.getElementById("fontColor");
+// const fontStyleInput = document.getElementById("fontStyle");
 
-      // Apply Color Theme
-      colorButtons.forEach(button = > {
-        button.addEventListener(
-            "click", () = > {
-              body.className = ""; // Reset classes
-              body.classList.add(button.getAttribute("data-theme"));
-            });
-      });
+// // Add event listeners to update the text style dynamically
+// fontSizeInput.addEventListener(
+//     "input",
+//     () = > { textElement.style.fontSize = `${fontSizeInput.value} px`; });
 
-      // Apply Font
-      fontSelect.addEventListener(
-          "change", () = > { body.style.fontFamily = fontSelect.value; });
+// fontColorInput.addEventListener(
+//     "input", () = > { textElement.style.color = fontColorInput.value; });
 
-      // Adjust Font Size
-      fontSizeInput.addEventListener(
-          "input",
-          () = > { body.style.fontSize = `${fontSizeInput.value} px`; });
+// fontStyleInput.addEventListener(
+//     "change", () = > { textElement.style.fontFamily = fontStyleInput.value;
+//     });
+// fontSizeInput.addEventListener(
+//     "input", () = > {
+//       console.log("Font size changed to:", fontSizeInput.value);
+//       textElement.style.fontSize = `${fontSizeInput.value} px`;
+//     });
+function setTheme(theme) {
+  document.body.className = '';
+  if (theme == = 'high-contrast') {
+    document.body.classList.add('high-contrast');
+  } else if (theme == = 'grayscale') {
+    document.body.classList.add('grayscale');
+  } else if (theme == = 'underline-links') {
+    document.body.classList.add('underline-links');
+  }
+}
 
-      // Toggle High Contrast Mode
-      highContrastCheckbox.addEventListener(
-          "change", () = > {
-            body.classList.toggle("high-contrast",
-                                  highContrastCheckbox.checked);
-          });
+function changeFont() {
+  const selectedFont = document.getElementById('fontSelect').value;
+  document.body.style.fontFamily = selectedFont;
+}
 
-      // Toggle Grayscale Mode
-      grayscaleCheckbox.addEventListener(
-          "change", () = > {
-            body.classList.toggle("grayscale", grayscaleCheckbox.checked);
-          });
+function changeFontSize() {
+  const fontSize = document.getElementById('fontSize').value + 'px';
+  // document.body.style.fontSize = fontSize;
+  document.documentElement.style.fontSize = fontSize;
+}
 
-      // Toggle Underline Links
-      underlineLinksCheckbox.addEventListener(
-          "change", () = > {
-            const links = document.querySelectorAll("a");
-            links.forEach(link = > {
-              link.style.textDecoration =
-                  underlineLinksCheckbox.checked ? "underline" : "none";
-            });
-          });
+function toggleHighContrast() {
+  document.body.classList.toggle('high-contrast');
+}
 
-      // Download Theme as CSS
-      downloadButton.addEventListener(
-          "click", () = > {
-            const styles = ` body {
-              font - family : ${body.style.fontFamily || "Arial, sans-serif"};
-              font - size : ${body.style.fontSize || "16px"};
-              background - color
-                  : ${window.getComputedStyle(body).backgroundColor};
-            color:
-              ${window.getComputedStyle(body).color};
-            filter:
-              ${window.getComputedStyle(body).filter};
-            }
-            a {
-              text - decoration
-                  : ${underlineLinksCheckbox.checked ? "underline" : "none"};
-            }
-            `;
-            const blob = new Blob([styles], {
-              type:
-                "text/css"
-            });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "accessible-theme.css";
-            a.click();
-            URL.revokeObjectURL(url);
-          });
-    });
+function toggleGrayscale() { document.body.classList.toggle('grayscale'); }
+
+function toggleUnderlineLinks() {
+  document.body.classList.toggle('underline-links');
+}
+
+function downloadCSS() {
+  const cssContent = `body {
+    font - family : ${document.body.style.fontFamily};
+    font - size : ${document.body.style.fontSize};
+  }
+  `;
+  const blob = new Blob([cssContent], {
+    type:
+      'text/css'
+  });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'custom-theme.css';
+  link.click();
+}
