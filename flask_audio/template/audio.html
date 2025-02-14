@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask TTS</title>
+</head>
+<body>
+    <h2>Enter text to convert to speech:</h2>
+    <form action="/speak" method="post">
+        <input type="text" name="text" required>
+        <button type="submit">Convert</button>
+    </form>
+
+    {% if audio_file %}
+    <h3>Audio Output:</h3>
+    <audio controls autoplay>
+        <source src="{{ audio_file }}" type="audio/mp3">
+    </audio>
+    {% endif %}
+</body>
+</html>
