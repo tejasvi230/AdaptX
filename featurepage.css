@@ -24,6 +24,13 @@ body {
 }
 
 
+
+/* Hide scrollbar for all browsers */
+body {
+    overflow: hidden; /* This will completely remove scrolling */
+}
+
+
 #navbar-menu {
   display: flex;
   flex-direction: row;
